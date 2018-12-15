@@ -4,10 +4,8 @@
 
   </head>
   <body>
-    <script>
-
-      let playerInput = prompt("Choose either Rock, Paper, or Scissors");
-      let playerInputLowercase = playerInput.toLowerCase();
+    
+    <script type="text/javascript">
       
       function computerPlay() {
         var options = ['rock', 'paper', 'scissors'];
@@ -16,7 +14,6 @@
       }
       
       
-
       function playRound(playerSelection, computerSelection) {
 
         if(playerSelection === computerSelection) {
@@ -65,7 +62,7 @@
       function getUserInput() {
         let playerInput = prompt("Choose either Rock, Paper, or Scissors");
         let playerInputLowercase = playerInput.toLowerCase();
-        return playerInputLowercase
+        return playerInputLowercase;
       }
 
       function game() {
@@ -75,7 +72,7 @@
         for (i = 0; i < 5; i++) {
           let playerSelection = getUserInput();
           let computerSelection = computerPlay();
-          let result = play(playerSelection, computerSelection);
+          let result = playRound(playerSelection, computerSelection);
           
           if (result == "win") {
             playerScore++;
@@ -87,18 +84,15 @@
         }
         
         if (playerScore > computerScore) {
-          alert("You won by winning ${playerScore}/5 games!");
+          alert(`You won by winning ${playerScore}/5 games!`);
         }
         else if (playerScore < computerScore) {
-          alert("You lost by losing ${computerScore}/5 games");
+          alert(`You lost by losing ${computerScore}/5 games`);
         }
       }
 
-      console.log("player: " + playerSelection);
-      console.log("computer: " + computerSelection());
-
-      console.log(playRound(playerSelection, computerSelection))
-
+      console.log (game());
     </script>
+
   </body>
 </html>
